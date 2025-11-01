@@ -1,6 +1,28 @@
-﻿local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
-local AntiCheatBypass = loadstring(game:HttpGet('https://raw.githubusercontent.com/DarkFadow/Zen-s-Anti-Cheat-Bypass/refs/heads/main/ZenAntiCheatBypasser.lua'))()
+-- Version corrigée avec protection
+local success, Rayfield = pcall(function()
+    return loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+end)
 
+if not success or not Rayfield then
+    error("❌ Impossible de charger Rayfield!")
+end
+
+-- Charge le bypass en SILENCE pour éviter les erreurs
+task.spawn(function()
+    pcall(function()
+        local bypassCode = game:HttpGet('https://raw.githubusercontent.com/DarkFadow/Zen-s-Anti-Cheat-Bypass/refs/heads/main/ZenAntiCheatBypasser.lua')
+        if bypassCode and #bypassCode > 100 then
+            loadstring(bypassCode)()
+            print("🛡️ Bypass chargé")
+        end
+    end)
+end)
+
+-- Continue avec ton UI
+local MainWindow = Rayfield:CreateWindow({
+   Name = "💫ZenScriptHub✨",
+   -- ... reste de ta configuration
+})
 local MainWindow = Rayfield:CreateWindow({
    Name = "💫ZenScriptHub✨",
    Icon = 0,
@@ -457,4 +479,5 @@ Players.PlayerRemoving:Connect(function(leavingPlayer)
     if leavingPlayer == LocalPlayer then
         cleanup()
     end
+
 end)
