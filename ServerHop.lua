@@ -1,5 +1,5 @@
--- ZenScriptHub Server Hop
--- Load me with: loadstring(game:HttpGet("https://raw.githubusercontent.com/DarkFadow/ZenScriptHub/main/ServerHop.lua"))()
+h-- ZenScriptHub Server Hop
+-- Load me with: loadstring(game:HttpGet("https://raw.githubusercontent.com/ZenTheScripter/ZenScriptHub/main/ServerHop.lua"))()
 
 local Players = game:GetService("Players")
 local TeleportService = game:GetService("TeleportService")
@@ -96,4 +96,5 @@ ServerHop()
 return {
     ServerHop = ServerHop,
     LowPopulationHop = LowPopulationHop
+
 }
