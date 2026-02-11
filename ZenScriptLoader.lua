@@ -1,4 +1,3 @@
-﻿local AntiCheatBypass = loadstring(game:HttpGet('https://raw.githubusercontent.com/DarkFadow/Zen-s-Anti-Cheat-Bypass/refs/heads/main/ZenAntiCheatBypasser.lua'))()
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local MainWindow = Rayfield:CreateWindow({
@@ -1205,4 +1204,5 @@ Players.PlayerRemoving:Connect(function(leavingPlayer)
     if leavingPlayer == LocalPlayer then
         cleanup()
     end
+
 end)
